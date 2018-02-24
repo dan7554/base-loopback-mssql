@@ -1,4 +1,5 @@
 CREATE DATABASE TestDb;
+CREATE DATABASE User;
 
 use TestDb;
 
@@ -22,3 +23,4 @@ INSERT INTO contacts([first_name],[last_name]) VALUES('Fuller','Vaughan'),('Davi
 INSERT INTO contacts([first_name],[last_name]) VALUES('Cedric','House'),('Honorato','Rosario'),('Perry','Rasmussen'),('Charles','Dotson'),('Burton','Rivas'),('Cruz','Wheeler'),('Forrest','Cote'),('Fuller','Hooper'),('Raja','Holden'),('Raja','Leonard');
 
 
+select * from contacts
