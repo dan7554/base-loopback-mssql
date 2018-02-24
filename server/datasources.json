@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "baseLoopbackDb": {
+    "host": "base-loopback-db.clecropdchbv.us-east-1.rds.amazonaws.com",
+    "port": 1433,
+    "database": "TestDb",
+    "username": "dmc_admin",
+    "password": "dmc.aws.base.loopback.1007554",
+    "name": "baseLoopbackDb",
+    "connector": "mssql",
+    "schema": "dbo"
+  }
+}
