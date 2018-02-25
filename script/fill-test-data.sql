@@ -1,5 +1,5 @@
 CREATE DATABASE TestDb;
-CREATE DATABASE User;
+CREATE DATABASE UserDb;
 
 use TestDb;
 
