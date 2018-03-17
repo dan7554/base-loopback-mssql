@@ -1,58 +1,84 @@
 {
-    "name": "Contacts",
-    "options": {
-      "idInjection": false,
+  "name": "Contacts",
+  "options": {
+    "idInjection": false,
+    "mssql": {
+      "schema": "dbo",
+      "table": "contacts"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "id": 1,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
       "mssql": {
-        "schema": "dbo",
-        "table": "contacts"
+        "columnName": "id",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
       }
     },
-    "properties": {
-      "id": {
-        "type": "Number",
-        "required": true,
-        "length": null,
-        "precision": 10,
-        "scale": 0,
-        "id": 1,
-        "mssql": {
-          "columnName": "id",
-          "dataType": "int",
-          "dataLength": null,
-          "dataPrecision": 10,
-          "dataScale": 0,
-          "nullable": "NO"
-        }
-      },
-      "firstName": {
-        "type": "String",
-        "required": false,
-        "length": 255,
-        "precision": null,
-        "scale": null,
-        "mssql": {
-          "columnName": "first_name",
-          "dataType": "varchar",
-          "dataLength": 255,
-          "dataPrecision": null,
-          "dataScale": null,
-          "nullable": "YES"
-        }
-      },
-      "lastName": {
-        "type": "String",
-        "required": false,
-        "length": 255,
-        "precision": null,
-        "scale": null,
-        "mssql": {
-          "columnName": "last_name",
-          "dataType": "varchar",
-          "dataLength": 255,
-          "dataPrecision": null,
-          "dataScale": null,
-          "nullable": "YES"
-        }
+    "firstName": {
+      "type": "String",
+      "required": false,
+      "length": 255,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "first_name",
+        "dataType": "varchar",
+        "dataLength": 255,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "lastName": {
+      "type": "String",
+      "required": false,
+      "length": 255,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "last_name",
+        "dataType": "varchar",
+        "dataLength": 255,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
       }
     }
-  }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "/api/Users"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "/Users"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "api/Users"
+    }
+  ],
+  "methods": {}
+}
