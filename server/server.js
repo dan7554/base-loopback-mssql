@@ -2,8 +2,10 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var mssqlfix = require('./boot/mssql-fix.js');
 
 var app = module.exports = loopback();
+
 
 app.start = function() {
   // start the web server
@@ -27,3 +29,8 @@ boot(app, __dirname, function(err) {
   if (require.main === module)
     app.start();
 });
+
+// Fixes a bad PK column. Run everytime???
+mssqlfix(app);
+
+
